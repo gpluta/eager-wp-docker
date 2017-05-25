@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "ES5",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "allowUnreachableCode": false,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "baseUrl": "assets-src/ts",
+    "lib": [
+      "dom", "es2015"
+    ]
+  },
+  "exclude": [
+    "node_modules"
+  ],
+  "include": [
+    "assets-src/ts/**/*.ts"
+  ]
+}
