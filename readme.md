@@ -2,7 +2,7 @@ WP development env with docker-compose.
 
 Based on [https://github.com/10up/wp-local-docker](https://github.com/10up/wp-local-docker)
 
-php-fpm, nginx, MySQL // TODO replace MySQL with MariaDB
+php-fpm, nginx, MariaDB
 
 ```bash
 docker-compose up

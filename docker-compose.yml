@@ -1,7 +1,7 @@
 version: '3'
 services:
-  mysql:
-    image: mysql:latest
+  mariadb:
+    image: mariadb:latest
     volumes:
       - "./data/db:/var/lib/mysql"
     restart: always
@@ -14,7 +14,7 @@ services:
       MYSQL_PASSWORD: password
   phpfpm:
     depends_on:
-      - mysql
+      - mariadb
     volumes:
       - "./wordpress:/var/www/html"
       - "./config/php-fpm/php.ini:/usr/local/etc/php/php.ini"
