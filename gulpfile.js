@@ -185,13 +185,13 @@ gulp.task('svg-sprite', () =>
 // Browser-sync - proxy requests to our phpfpm container
 gulp.task('browser-sync', () => {
     browserSync.init({
-        proxy: "localhost",
+        proxy: "localhost", //:80
         open: false,
         notify: false
     });
 });
 
-// Reload the browser
+// Reload
 gulp.task('browser-reload', () => {
     browserSync.reload();
 });
