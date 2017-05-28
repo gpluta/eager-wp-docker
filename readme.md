@@ -9,11 +9,11 @@ docker-compose up
 ./bin/setup.sh
 ```
 
-Serves phpfpm containers' port 80 to our localhost:80
+Serves phpfpm containers' port 80 to our `localhost:80`
 
 Notes:
-Keeps yout MySQL data secure on a `./data` volume.
-Mounts /var/www/html to `./wordpress` volume.
+Keeps yout MySQL data secure on a `./data` host volume.
+Mounts `/var/www/html` to a host `./wordpress` volume.
 Store your source assets in `./assets-src`
 Includes phpunit and wp-cli
 
