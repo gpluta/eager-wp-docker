@@ -67,10 +67,11 @@ if (!productionBuild) {
     cleanCss = uglify = empty;
 }
 
-let srcBase = './assets-src';
+const srcBase = './assets-src';
+const THEME_NAME = 'testtheme';
 
 // Set the dir for your theme
-let distBase = './wordpress/wp-content/themes/testtheme/assets';
+let distBase = `./wordpress/wp-content/themes/${THEME_NAME}/assets`;
 
 if (distBase === './wordpress/wp-content/themes/testtheme/assets') {
     console.log('Remember to setup the dir for your theme!')
