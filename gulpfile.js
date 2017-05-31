@@ -67,10 +67,12 @@ if (!productionBuild) {
     cleanCss = uglify = empty;
 }
 
-let srcBase = './assets-src';
+const srcBase = './assets-src';
+const THEME_NAME = 'testtheme';
 
 // Set the dir for your theme
-let distBase = './wordpress/wp-content/themes/testtheme/assets';
+let themeBase = `./wordpress/wp-content/themes/${THEME_NAME}`;
+let distBase = `./wordpress/wp-content/themes/${THEME_NAME}/assets`;
 
 if (distBase === './wordpress/wp-content/themes/testtheme/assets') {
     console.log('Remember to setup the dir for your theme!')
@@ -126,7 +128,8 @@ gulp.task('tslint', () =>
         .pipe(tslint({
             formatter: 'verbose'
         }))
-        .pipe(tslint.report({emitError: false, summarizeFailureOutput: true})));
+        .pipe(tslint.report({emitError: false, summarizeFailureOutput: true}))
+);
 
 gulp.task('ts', () =>
     browserify({debug: (productionBuild === false)})
@@ -226,5 +229,9 @@ gulp.task('default', ['browser-sync'], function () {
 
     watch(paths.src.svg, batch((events, done) => {
         runSequence('svg-sprite', 'copy-index', 'browser-reload', done);
+    }));
+
+    watch(themeBase + '/**/*.php', batch((events, done) => {
+        runSequence('browser-reload', done);
     }));
 });
