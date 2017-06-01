@@ -13,6 +13,7 @@ services:
       MYSQL_USER: wordpress
       MYSQL_PASSWORD: password
   phpfpm:
+    image: gpluta/phpfpm:7.1
     depends_on:
       - mariadb
     volumes:
@@ -20,7 +21,6 @@ services:
       - "./config/php-fpm/php.ini:/usr/local/etc/php/php.ini"
       - "./config/php-fpm/docker-php-ext-xdebug.ini:/usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini"
     restart: always
-    build: ./dockerfiles/php-fpm
     extra_hosts:
       - "docker-local.dev:172.18.0.1"
   nginx:
