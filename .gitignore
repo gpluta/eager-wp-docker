@@ -33,6 +33,7 @@ config.codekit
 !/data/.gitkeep
 
 wordpress/wp-content/themes/twenty*
+wordpress/wp-content/languages/themes/twenty*
 wordpress/wp-content/upgrade
 wordpress/wp-content/uploads
 wordpress/sitemap.*
