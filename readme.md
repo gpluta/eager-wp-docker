@@ -12,7 +12,7 @@ docker-compose up
 Serves phpfpm containers' port 80 to our `localhost:80`
 
 Notes:
-Keeps yout MySQL data secure on a `./data` host volume.
+Keeps your MySQL (MariaDB) data secure on a `./data` host volume.
 Mounts `/var/www/html` to a host `./wordpress` volume.
 Store your source assets in `./assets-src`
 Includes phpunit and wp-cli
