@@ -27,16 +27,30 @@ sassdoc
 scss-lint-report.xml
 config.codekit
 
+## Wordpress config
+## The idea is to version as little as possible:
+## - a theme you are working on (mytheme)
+## - your custom plugins
+
 !/wordpress/.gitkeep
 
+# This is the MariaDB data folder
 /data/*
 !/data/.gitkeep
 
-wordpress/wp-content/themes/twenty*
-wordpress/wp-content/languages/themes/twenty*
-wordpress/wp-content/upgrade
-wordpress/wp-content/uploads
-wordpress/sitemap.*
+# Wordpress files
+wordpress/*
+!wordpress/wp-content/
 
-wordpress/wp-config.php
-*.sql
+wordpress/wp-content/*
+!wordpress/wp-content/themes/
+!wordpress/wp-content/plugins/
+
+# Version only your theme...
+wordpress/wp-content/themes/*
+#!wordpress/wp-content/themes/mytheme
+
+# ...and your plugins
+wordpress/wp-content/plugins/*
+#!wordpress/wp-content/plugins/myplugin.php
+#!wordpress/wp-content/plugins/myplugin
