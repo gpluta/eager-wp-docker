@@ -181,7 +181,7 @@ gulp.task('svg-sprite', () =>
         }))
         .pipe(rename({prefix: 'image-'}))
         .pipe(svgstore({inlineSvg: true}))
-        .pipe(rename({basename: 'svg-sprite', extname: '.svg'}))
+        .pipe(rename({basename: 'inline-svgsprite', extname: '.php'}))
         .pipe(gulp.dest(paths.dist.images))
 );
 
