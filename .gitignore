@@ -40,6 +40,9 @@ config.codekit
 # Wordpress files
 wordpress/*
 !/wordpress/.gitkeep
+
+# Tune the rest to your needs...
+
 !wordpress/wp-content/
 
 wordpress/wp-content/*
