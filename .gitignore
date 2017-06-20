@@ -32,7 +32,6 @@ config.codekit
 ## - a theme you are working on (mytheme)
 ## - your custom plugins
 
-!/wordpress/.gitkeep
 
 # This is the MariaDB data folder
 /data/*
@@ -40,6 +39,7 @@ config.codekit
 
 # Wordpress files
 wordpress/*
+!/wordpress/.gitkeep
 !wordpress/wp-content/
 
 wordpress/wp-content/*
