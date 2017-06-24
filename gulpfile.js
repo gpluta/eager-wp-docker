@@ -161,23 +161,40 @@ gulp.task('scripts-vendor', () => {
 gulp.task('imagemin', () =>
     gulp.src(paths.src.images)
         .pipe(changed(paths.dist.images))
-        .pipe(imagemin({
-            progressive: true,
-            svgoPlugins: [{
-                removeViewBox: false
-            }]
-        }))
+        .pipe(imagemin([
+            imagemin.gifsicle({
+                interlaced: true
+            }),
+            imagemin.jpegtran({
+                progressive: true
+            }),
+            imagemin.optipng({
+                optimizationLevel: 5
+            }),
+            imagemin.svgo({
+                plugins: [{
+                    convertPathData: {
+                        floatPrecision: 0
+                    }
+                }]
+            })
+        ]))
         .pipe(gulp.dest(paths.dist.images))
 );
 
 // Buld an svg sprite to be inlined in index.php later
 gulp.task('svg-sprite', () =>
     gulp.src([paths.src.svg])
-        .pipe(svgmin({
-            floatPrecision: 2,
-            plugins: [{
-                removeDoctype: true
-            }]
+        .pipe(svgo({
+            plugins: [
+                {
+                    removeTitle: true
+                }, {
+                    convertPathData: {
+                        floatPrecision: 1
+                    }
+                }
+            ]
         }))
         .pipe(rename({prefix: 'image-'}))
         .pipe(svgstore({inlineSvg: true}))
