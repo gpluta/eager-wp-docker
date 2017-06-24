@@ -30,7 +30,7 @@
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^2.6.0",
-    "gulp-svgmin": "^1.2.3",
+    "gulp-svgo": "^1.1.1",
     "gulp-svgstore": "^6.1.0",
     "gulp-tslint": "^8.0.0",
     "gulp-uglify": "^3.0.0",
@@ -41,7 +41,7 @@
     "through2": "^2.0.3",
     "tsify": "^3.0.1",
     "tslint": "^5.2.0",
-    "typescript": "^2.3.2",
+    "typescript": "^2.4.0",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
   },
