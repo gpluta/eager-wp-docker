@@ -1,7 +1,7 @@
 {
   "name": "eager-wp-docker",
   "version": "1.0.0",
-  "description": "single-page html5 boilerplate - jQuery, Zurb Foundation",
+  "description": "Docker based, wordpress local dev environment.",
   "author": "gp",
   "license": "MIT",
   "repository": {
