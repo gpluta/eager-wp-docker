@@ -86,6 +86,7 @@ let paths = {
         scss: srcBase + '/scss/**/*.scss',
         ts: srcBase + '/ts/app.ts',
         allTs: srcBase + '/ts/**/*.ts',
+        statics: srcBase + '/statics/**/*',
 
         // This is a list of js files that will be concatenated and saved as vendor.js file.
         // For stuff that can not be imported into the project with `import`...
@@ -95,7 +96,8 @@ let paths = {
         base: distBase,
         images: distBase + '/images/',
         css: distBase + '/css/',
-        js: distBase + '/js/'
+        js: distBase + '/js/',
+        statics: distBase + '/statics/'
     }
 };
 
@@ -201,6 +203,19 @@ gulp.task('svg-sprite', () =>
         .pipe(gulp.dest(paths.dist.images))
 );
 
+// Copy all files from statics folder
+gulp.task('copy-statics', () => {
+    gulp.src(paths.src.statics)
+        .pipe(gulp.dest(paths.dist.statics));
+});
+
+// Clean statics in dist folder
+gulp.task('clean-statics', async () => {
+    await del([paths.dist.statics]).then(paths => {
+        console.log('Deleted: files and folders:\n', paths.join('\n'));
+    });
+});
+
 // Browser-sync - proxy requests to our phpfpm container
 gulp.task('browser-sync', () => {
     browserSync.init({
@@ -231,6 +246,10 @@ gulp.task('dist', cb => {
 
 // Default task. Should be preceded by `gulp dist`. Watches for changes, launches tasks and reloads the browser. Nice!
 gulp.task('default', ['browser-sync'], function () {
+    watch(paths.src.statics, batch((events, done) => {
+        runSequence('clean-statics', 'copy-statics', 'browser-reload', done);
+    }));
+
     watch(paths.src.allTs, batch((events, done) => {
         runSequence('tslint', 'ts', 'browser-reload', done);
     }));
