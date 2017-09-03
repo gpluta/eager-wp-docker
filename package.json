@@ -12,7 +12,7 @@
     "clean": "shx rm -rf node_modules/"
   },
   "devDependencies": {
-    "@types/jquery": "^3.2.4",
+    "@types/jquery": "^3.2.12",
     "browser-sync": "^2.18.13",
     "browserify": "^14.3.0",
     "del": "^3.0.0",
@@ -38,8 +38,8 @@
     "shx": "^0.2.2",
     "through2": "^2.0.3",
     "tsify": "^3.0.1",
-    "tslint": "^5.6.0",
-    "typescript": "^2.4.2",
+    "tslint": "^5.7.0",
+    "typescript": "^2.5.2",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
   },
