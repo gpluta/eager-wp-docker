@@ -10,7 +10,7 @@
     "noImplicitReturns": true,
     "baseUrl": "assets-src/ts",
     "lib": [
-      "dom", "es2015"
+      "dom", "esnext", "es2016.array.include"
     ]
   },
   "exclude": [
