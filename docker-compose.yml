@@ -24,7 +24,7 @@ services:
       - "./config/php-fpm/docker-php-ext-xdebug.ini:/usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini"
     restart: always
     extra_hosts:
-      - "docker-local.dev:172.18.0.1"
+      - "docker-local.test:172.18.0.1"
   nginx:
     image: nginx:latest
     depends_on:
