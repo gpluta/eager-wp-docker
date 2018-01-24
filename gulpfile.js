@@ -175,7 +175,7 @@ gulp.task('imagemin', () =>
             imagemin.svgo({
                 plugins: [{
                     convertPathData: {
-                        floatPrecision: 0
+                        floatPrecision: 2
                     }
                 }]
             })
