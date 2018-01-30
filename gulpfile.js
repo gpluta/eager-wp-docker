@@ -102,7 +102,7 @@ let paths = {
 };
 
 console.log('------------------------------------------------------');
-console.log('productionBuild (true for production build): ', productionBuild);
+console.log('productionBuild? ', productionBuild);
 console.log('------------------------------------------------------');
 
 // Compile scss
