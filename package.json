@@ -14,7 +14,7 @@
   "devDependencies": {
     "@types/jquery": "^3.3.0",
     "browser-sync": "^2.23.6",
-    "browserify": "^15.2.0",
+    "browserify": "^16.0.0",
     "del": "^3.0.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^4.1.0",
