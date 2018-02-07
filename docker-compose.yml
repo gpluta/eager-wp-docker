@@ -15,7 +15,7 @@ services:
       MYSQL_USER: wordpress
       MYSQL_PASSWORD: password
   phpfpm:
-    image: gpluta/phpfpm:7.1
+    image: gpluta/phpfpm:7.2-alpine
     depends_on:
       - mariadb
     volumes:
