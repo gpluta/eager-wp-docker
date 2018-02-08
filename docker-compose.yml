@@ -23,6 +23,9 @@ services:
       - "./config/php-fpm/php.ini:/usr/local/etc/php/php.ini"
       - "./config/php-fpm/docker-php-ext-xdebug.ini:/usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini"
     restart: always
+    environment:
+      XDEBUG_CONFIG: remote_host= #your local machine ip goes here
+      PHP_IDE_CONFIG: serverName=wpserver #server name configured in your IDE
     extra_hosts:
       - "docker-local.test:172.18.0.1"
   nginx:
